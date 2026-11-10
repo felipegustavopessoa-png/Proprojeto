@@ -16,7 +16,6 @@
         margin: 0;
         padding: 0;
       }
-
       :root {
         --ink: #242821;
         --muted: #6c7168;
@@ -28,31 +27,26 @@
         --mint: #b8f3e6;
         --peach: #ffe0b2;
       }
-
       body {
         min-height: 100vh;
         color: var(--ink);
         background: var(--canvas);
         font-family: "DM Sans", sans-serif;
       }
-
       button {
         color: inherit;
         font: inherit;
         cursor: pointer;
       }
-
       button:focus-visible {
         outline: 3px solid rgba(91, 77, 220, 0.3);
         outline-offset: 2px;
       }
-
       .page {
         min-height: 100vh;
         display: grid;
         grid-template-columns: minmax(330px, 0.9fr) minmax(480px, 1.1fr);
       }
-
       .brand {
         min-height: 100vh;
         padding: 44px clamp(40px, 6vw, 88px);
@@ -62,16 +56,12 @@
         color: white;
         background: var(--ink);
       }
-
       .logo {
         display: flex;
         align-items: center;
         gap: 10px;
-        font:
-          800 24px "Manrope",
-          sans-serif;
+        font: 800 24px "Manrope", sans-serif;
       }
-
       .logo-mark {
         width: 38px;
         height: 38px;
@@ -81,38 +71,30 @@
         color: var(--ink);
         background: var(--lime);
       }
-
       .brand-copy {
         margin-top: clamp(80px, 12vh, 130px);
       }
-
       .tag {
         color: var(--lime);
         font-size: 11px;
         font-weight: 800;
         letter-spacing: 1.5px;
       }
-
       .brand h2 {
         margin-top: 17px;
-        font:
-          800 clamp(38px, 4vw, 60px) / 1.05 "Manrope",
-          sans-serif;
+        font: 800 clamp(38px, 4vw, 60px) / 1.05 "Manrope", sans-serif;
         letter-spacing: -2.5px;
       }
-
       .brand p {
         margin-top: 20px;
         color: #b8bdb4;
       }
-
       .art {
         position: relative;
         width: 300px;
         height: 250px;
         margin: 35px auto;
       }
-
       .art::before,
       .art::after {
         content: "";
@@ -122,12 +104,10 @@
         border-radius: 50%;
         transform: rotate(-13deg);
       }
-
       .art::after {
         inset: 5px 65px;
         transform: rotate(55deg);
       }
-
       .bulb {
         position: absolute;
         z-index: 2;
@@ -144,7 +124,6 @@
         box-shadow: 13px 13px 0 var(--purple);
         font-size: 48px;
       }
-
       .quote {
         margin-top: auto;
         padding-left: 18px;
@@ -153,13 +132,11 @@
         font-size: 13px;
         line-height: 1.5;
       }
-
       .quote small {
         display: block;
         margin-top: 6px;
         color: #92978e;
       }
-
       .stage {
         min-height: 100vh;
         padding: 30px;
@@ -169,19 +146,17 @@
           radial-gradient(circle at 12% 15%, rgba(184, 243, 230, 0.65) 0 8%, transparent 8.2%),
           radial-gradient(circle at 88% 84%, rgba(255, 224, 178, 0.75) 0 10%, transparent 10.2%);
       }
-
       .app {
         width: min(100%, 460px);
         min-height: min(820px, calc(100vh - 60px));
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        border: 1px solid rgba(36, 40, 33, 0.1);
+        border: 1px solid rgba(36, 40, 33, sab 0.1);
         border-radius: 32px;
         background: var(--paper);
         box-shadow: 0 28px 70px rgba(41, 44, 38, 0.15);
       }
-
       .topbar {
         height: 70px;
         padding: 0 25px;
@@ -189,7 +164,6 @@
         grid-template-columns: 42px 1fr 42px;
         align-items: center;
       }
-
       .back {
         width: 40px;
         height: 40px;
@@ -200,25 +174,19 @@
         background: white;
         font-size: 20px;
       }
-
       .back.hidden {
         visibility: hidden;
       }
-
       .app-logo {
         justify-self: center;
-        font:
-          800 18px "Manrope",
-          sans-serif;
+        font: 800 18px "Manrope", sans-serif;
       }
-
       .counter {
         justify-self: end;
         color: #858980;
         font-size: 12px;
         font-weight: 700;
       }
-
       .progress {
         width: calc(100% - 50px);
         height: 4px;
@@ -227,7 +195,6 @@
         border-radius: 10px;
         background: #ecece7;
       }
-
       .progress span {
         display: block;
         height: 100%;
@@ -235,20 +202,17 @@
         background: var(--purple);
         transition: width 0.3s ease;
       }
-
       .screen {
         flex: 1;
         padding: 27px 34px 32px;
         animation: enter 0.3s ease;
       }
-
       @keyframes enter {
         from {
           opacity: 0;
           transform: translateY(7px);
         }
       }
-
       .eyebrow {
         display: block;
         margin-bottom: 13px;
@@ -257,27 +221,21 @@
         font-weight: 800;
         letter-spacing: 1.4px;
       }
-
       h1 {
-        font:
-          800 34px/1.1 "Manrope",
-          sans-serif;
+        font: 800 34px/1.1 "Manrope", sans-serif;
         letter-spacing: -1.5px;
       }
-
       .lead {
         margin-top: 13px;
         color: var(--muted);
         font-size: 15px;
         line-height: 1.55;
       }
-
       .hero {
         min-height: 680px;
         display: flex;
         flex-direction: column;
       }
-
       .hero-visual {
         height: 280px;
         margin-bottom: 28px;
@@ -286,7 +244,6 @@
         border-radius: 26px;
         background: #efeee8;
       }
-
       .hero-icon {
         width: 122px;
         height: 122px;
@@ -299,7 +256,6 @@
         box-shadow: 12px 12px 0 var(--purple);
         font-size: 55px;
       }
-
       .primary {
         width: 100%;
         min-height: 56px;
@@ -312,37 +268,31 @@
         font-weight: 700;
         transition: 0.16s;
       }
-
       .primary:hover:not(:disabled) {
         transform: translateY(-2px);
         box-shadow: 0 7px 0 #11130f;
       }
-
       .primary:disabled {
         color: #a5a8a1;
         background: #e5e6e1;
         box-shadow: none;
         cursor: not-allowed;
       }
-
       .hero .primary {
         margin-top: auto;
       }
-
       .micro {
         margin-top: 13px;
         color: #92968e;
         text-align: center;
         font-size: 11px;
       }
-
       .subjects {
         margin-top: 24px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
       }
-
       .subject {
         min-height: 110px;
         padding: 12px;
@@ -355,16 +305,13 @@
         background: white;
         transition: 0.18s;
       }
-
       .subject:hover {
         transform: translateY(-2px);
       }
-
       .subject.selected {
         border-color: var(--purple);
         background: #f8f7ff;
       }
-
       .symbol {
         width: 42px;
         height: 42px;
@@ -372,22 +319,15 @@
         place-items: center;
         border-radius: 12px;
         background: var(--subject-color);
-        font:
-          800 12px "Manrope",
-          sans-serif;
+        font: 800 12px "Manrope", sans-serif;
       }
-
       .subject strong {
-        font:
-          700 13px "Manrope",
-          sans-serif;
+        font: 700 13px "Manrope", sans-serif;
       }
-
       .subject small {
         color: #858980;
         font-size: 10px;
       }
-
       .meta {
         margin-bottom: 22px;
         display: flex;
@@ -396,7 +336,6 @@
         font-size: 11px;
         font-weight: 700;
       }
-
       .example {
         min-height: 145px;
         margin-top: 25px;
@@ -408,7 +347,6 @@
         border-radius: 22px;
         background: #f0efe9;
       }
-
       .example span {
         min-width: 58px;
         padding: 14px 11px;
@@ -417,11 +355,8 @@
         text-align: center;
         background: white;
         box-shadow: 0 4px 0 var(--ink);
-        font:
-          800 14px "Manrope",
-          sans-serif;
+        font: 800 14px "Manrope", sans-serif;
       }
-
       .example span:nth-child(2) {
         min-width: 35px;
         border: 0;
@@ -430,7 +365,6 @@
         box-shadow: none;
         font-size: 20px;
       }
-
       .tip {
         margin-top: 16px;
         padding: 15px;
@@ -440,27 +374,21 @@
         font-size: 12px;
         line-height: 1.5;
       }
-
       .tip strong {
         color: var(--ink);
       }
-
       .question {
         margin: 25px 0 21px;
         padding: 20px;
         border-radius: 18px;
         background: #f0efe9;
-        font:
-          700 18px/1.45 "Manrope",
-          sans-serif;
+        font: 700 18px/1.45 "Manrope", sans-serif;
       }
-
       .answers {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
       }
-
       .answer {
         min-height: 56px;
         padding: 8px;
@@ -469,19 +397,16 @@
         background: white;
         font-weight: 700;
       }
-
       .answer.correct {
         border-color: #4b966e;
         color: #245a40;
         background: #e4f5e9;
       }
-
       .answer.wrong {
         border-color: #dc7777;
         color: #963f3f;
         background: #fff0ef;
       }
-
       .hint,
       .feedback {
         width: 100%;
@@ -490,33 +415,27 @@
         border-radius: 13px;
         font-size: 12px;
       }
-
       .hint {
         border: 1px dashed #b7b9b2;
         background: white;
       }
-
       .feedback {
         display: grid;
         gap: 4px;
         border: 0;
         text-align: left;
       }
-
       .feedback.success {
         color: #26543c;
         background: #e4f5e9;
       }
-
       .feedback.error {
         color: #87433f;
         background: #fff0ef;
       }
-
       .result {
         text-align: center;
       }
-
       .seal {
         width: 82px;
         height: 82px;
@@ -530,7 +449,6 @@
         box-shadow: 8px 8px 0 var(--purple);
         font-size: 35px;
       }
-
       .stats {
         margin-top: 25px;
         padding: 18px 0;
@@ -538,28 +456,21 @@
         grid-template-columns: repeat(3, 1fr);
         border-block: 1px solid #e4e5df;
       }
-
       .stats div + div {
         border-left: 1px solid #e4e5df;
       }
-
       .stats strong,
       .stats small {
         display: block;
       }
-
       .stats strong {
-        font:
-          800 16px "Manrope",
-          sans-serif;
+        font: 800 16px "Manrope", sans-serif;
       }
-
       .stats small {
         margin-top: 5px;
         color: #858980;
         font-size: 9px;
       }
-
       .plan {
         margin-top: 20px;
         padding: 18px;
@@ -569,34 +480,28 @@
         background: #f2f9e5;
         box-shadow: 5px 5px 0 var(--ink);
       }
-
       .plan small {
         display: block;
         margin-bottom: 8px;
         color: var(--purple);
         font-weight: 800;
       }
-
       .plan p {
         margin-top: 4px;
         color: var(--muted);
         font-size: 11px;
       }
-
       @media (max-width: 880px) {
         .page {
           display: block;
         }
-
         .brand {
           display: none;
         }
-
         .stage {
           padding: 0;
           background: white;
         }
-
         .app {
           width: 100%;
           min-height: 100vh;
@@ -605,12 +510,10 @@
           box-shadow: none;
         }
       }
-
       @media (max-width: 390px) {
         .screen {
           padding-inline: 24px;
         }
-
         h1 {
           font-size: 30px;
         }
@@ -632,7 +535,6 @@
           <small>— Bia, 16 anos</small>
         </div>
       </aside>
-
       <section class="stage">
         <div class="app">
           <header class="topbar">
@@ -645,7 +547,6 @@
         </div>
       </section>
     </main>
-
     <script>
       const subjects = [
         {
@@ -654,13 +555,33 @@
           symbol: "x²",
           color: "#d9f99d",
           title: "Equação é uma balança.",
-          explanation: "O que você faz de um lado, precisa fazer do outro.",
+          explanation: "O que você faz de um lado, precisa fazer do outro para manter o equilíbrio.",
           example: ["x + 2", "=", "8"],
-          question: "Quanto vale x em x + 2 = 8?",
-          options: ["4", "5", "6", "10"],
-          correct: "6",
-          hint: "Tire 2 dos dois lados: 8 − 2.",
-          next: "Praticar equações com multiplicação",
+          tip: "Sempre isole a letra fazendo a operação inversa dos dois lados.",
+          next: "Equações com multiplicação e divisão",
+          questions: [
+            {
+              q: "Quanto vale x em x + 2 = 8?",
+              options: ["4", "5", "6", "10"],
+              correct: "6",
+              hint: "Tire 2 dos dois lados: 8 − 2.",
+              explanation: "x + 2 = 8 → x = 8 − 2 → x = 6"
+            },
+            {
+              q: "Quanto vale x em x − 5 = 12?",
+              options: ["7", "17", "15", "5"],
+              correct: "17",
+              hint: "Some 5 dos dois lados.",
+              explanation: "x − 5 = 12 → x = 12 + 5 → x = 17"
+            },
+            {
+              q: "Quanto vale x em 3x = 15?",
+              options: ["3", "5", "12", "45"],
+              correct: "5",
+              hint: "Divida os dois lados por 3.",
+              explanation: "3x = 15 → x = 15 ÷ 3 → x = 5"
+            }
+          ]
         },
         {
           name: "Português",
@@ -668,13 +589,33 @@
           symbol: "Aa",
           color: "#c8c1ff",
           title: "Verbo mostra uma ação.",
-          explanation: "Na frase, procure a palavra que diz o que alguém faz.",
+          explanation: "Na frase, procure a palavra que diz o que alguém faz ou o que acontece.",
           example: ["Ana", "corre", "cedo"],
-          question: "Qual é o verbo em “Ana corre cedo”?",
-          options: ["Ana", "corre", "cedo", "frase"],
-          correct: "corre",
-          hint: "Qual palavra mostra a ação de Ana?",
-          next: "Reconhecer verbos em novas frases",
+          tip: "Pergunte: “o que a pessoa está fazendo?” A resposta costuma ser o verbo.",
+          next: "Identificar verbos em textos maiores",
+          questions: [
+            {
+              q: "Qual é o verbo em “Ana corre cedo”?",
+              options: ["Ana", "corre", "cedo", "frase"],
+              correct: "corre",
+              hint: "Qual palavra mostra a ação de Ana?",
+              explanation: "“Corre” é a ação que Ana realiza."
+            },
+            {
+              q: "Qual é o verbo em “O menino escreveu uma carta”?",
+              options: ["menino", "escreveu", "carta", "uma"],
+              correct: "escreveu",
+              hint: "O que o menino fez?",
+              explanation: "“Escreveu” indica a ação realizada pelo menino."
+            },
+            {
+              q: "Em “Eles estudam todas as noites”, o verbo é:",
+              options: ["Eles", "estudam", "todas", "noites"],
+              correct: "estudam",
+              hint: "Qual palavra diz o que eles fazem?",
+              explanation: "“Estudam” é a ação que eles praticam."
+            }
+          ]
         },
         {
           name: "Biologia",
@@ -682,13 +623,33 @@
           symbol: "DNA",
           color: "#b8f3e6",
           title: "O núcleo comanda a célula.",
-          explanation: "Ele guarda o DNA e orienta as atividades da célula.",
+          explanation: "Ele guarda o DNA e orienta todas as atividades da célula.",
           example: ["Núcleo", "→", "comando"],
-          question: "Qual parte comanda a célula?",
-          options: ["Núcleo", "Membrana", "Sangue", "Osso"],
-          correct: "Núcleo",
-          hint: "É a parte que também guarda o DNA.",
-          next: "Conhecer as outras partes da célula",
+          tip: "Pense no núcleo como o “cérebro” da célula.",
+          next: "Conhecer organelas e suas funções",
+          questions: [
+            {
+              q: "Qual parte comanda a célula?",
+              options: ["Núcleo", "Membrana", "Sangue", "Osso"],
+              correct: "Núcleo",
+              hint: "É a parte que também guarda o DNA.",
+              explanation: "O núcleo controla as funções e armazena o material genético."
+            },
+            {
+              q: "Onde fica o DNA da célula?",
+              options: ["Membrana", "Citoplasma", "Núcleo", "Parede"],
+              correct: "Núcleo",
+              hint: "É a mesma estrutura que comanda a célula.",
+              explanation: "O DNA fica protegido dentro do núcleo."
+            },
+            {
+              q: "Qual estrutura controla a entrada e saída de substâncias?",
+              options: ["Núcleo", "Membrana", "DNA", "Vacúolo"],
+              correct: "Membrana",
+              hint: "É a “pele” da célula.",
+              explanation: "A membrana plasmática regula o que entra e sai."
+            }
+          ]
         },
         {
           name: "História",
@@ -696,13 +657,33 @@
           symbol: "1789",
           color: "#ffe0b2",
           title: "A Revolução mudou a França.",
-          explanation: "Em 1789, a população reagiu à desigualdade e ao poder do rei.",
+          explanation: "Em 1789, a população reagiu à desigualdade e ao poder absoluto do rei.",
           example: ["1789", "→", "Revolução"],
-          question: "Em que ano começou a Revolução Francesa?",
-          options: ["1500", "1789", "1822", "1889"],
-          correct: "1789",
-          hint: "O ano aparece no exemplo acima.",
-          next: "Entender as causas da Revolução",
+          tip: "A Revolução Francesa marca o fim do absolutismo na França.",
+          next: "Entender as causas e fases da Revolução",
+          questions: [
+            {
+              q: "Em que ano começou a Revolução Francesa?",
+              options: ["1500", "1789", "1822", "1889"],
+              correct: "1789",
+              hint: "O ano aparece no exemplo acima.",
+              explanation: "A Revolução Francesa começou em 1789."
+            },
+            {
+              q: "Qual era o sistema político antes da Revolução?",
+              options: ["Democracia", "Absolutismo", "República", "Império"],
+              correct: "Absolutismo",
+              hint: "O rei tinha poder quase total.",
+              explanation: "A França vivia sob o absolutismo monárquico."
+            },
+            {
+              q: "Qual classe social liderou grande parte das revoltas?",
+              options: ["Clero", "Nobreza", "Burguesia", "Escravos"],
+              correct: "Burguesia",
+              hint: "Era a classe que crescia economicamente mas tinha poucos direitos políticos.",
+              explanation: "A burguesia queria mais poder político e liberdade econômica."
+            }
+          ]
         },
         {
           name: "Física",
@@ -710,13 +691,33 @@
           symbol: "m/s",
           color: "#ffd4c8",
           title: "Velocidade liga espaço e tempo.",
-          explanation: "Divida a distância percorrida pelo tempo gasto.",
+          explanation: "Para encontrar a velocidade, divida a distância percorrida pelo tempo gasto.",
           example: ["distância", "÷", "tempo"],
-          question: "Qual cálculo encontra a velocidade?",
-          options: ["somar", "multiplicar", "dividir", "subtrair"],
-          correct: "dividir",
-          hint: "Use distância ÷ tempo.",
-          next: "Calcular uma velocidade simples",
+          tip: "Fórmula básica: v = Δs / Δt",
+          next: "Calcular velocidade média em situações reais",
+          questions: [
+            {
+              q: "Qual cálculo encontra a velocidade?",
+              options: ["somar", "multiplicar", "dividir", "subtrair"],
+              correct: "dividir",
+              hint: "Use distância ÷ tempo.",
+              explanation: "Velocidade = distância ÷ tempo."
+            },
+            {
+              q: "Um carro percorre 120 km em 2 horas. Qual a velocidade média?",
+              options: ["40 km/h", "60 km/h", "80 km/h", "240 km/h"],
+              correct: "60 km/h",
+              hint: "120 ÷ 2 = ?",
+              explanation: "120 km ÷ 2 h = 60 km/h."
+            },
+            {
+              q: "Se um ciclista anda a 15 km/h por 3 horas, quantos km ele percorre?",
+              options: ["5 km", "18 km", "45 km", "30 km"],
+              correct: "45 km",
+              hint: "Multiplique velocidade × tempo.",
+              explanation: "15 km/h × 3 h = 45 km."
+            }
+          ]
         },
         {
           name: "Geografia",
@@ -724,20 +725,43 @@
           symbol: "°C",
           color: "#bde1ff",
           title: "Clima não é tempo.",
-          explanation: "Tempo é o estado de hoje. Clima é o padrão de muitos anos.",
+          explanation: "Tempo é o estado do ar em um dia. Clima é o padrão de muitos anos.",
           example: ["hoje", "≠", "muitos anos"],
-          question: "O que descreve um padrão de muitos anos?",
-          options: ["Clima", "Tempo", "Hora", "Estação"],
-          correct: "Clima",
-          hint: "Não é apenas o que acontece hoje.",
-          next: "Comparar tipos de clima",
-        },
+          tip: "Clima = padrão longo. Tempo = condição do momento.",
+          next: "Comparar os principais tipos de clima do Brasil",
+          questions: [
+            {
+              q: "O que descreve um padrão de muitos anos?",
+              options: ["Clima", "Tempo", "Hora", "Estação"],
+              correct: "Clima",
+              hint: "Não é apenas o que acontece hoje.",
+              explanation: "Clima é o comportamento médio da atmosfera ao longo de décadas."
+            },
+            {
+              q: "“Hoje está chovendo em São Paulo” refere-se a:",
+              options: ["Clima", "Tempo", "Estação", "Latitude"],
+              correct: "Tempo",
+              hint: "É a condição do dia de hoje.",
+              explanation: "Tempo meteorológico descreve o estado atual da atmosfera."
+            },
+            {
+              q: "Qual fator mais influencia o clima de uma região?",
+              options: ["Hora do dia", "Latitude", "Cor da terra", "Nome da cidade"],
+              correct: "Latitude",
+              hint: "Quanto mais perto do equador, mais quente costuma ser.",
+              explanation: "A latitude é um dos principais fatores climáticos."
+            }
+          ]
+        }
       ];
 
       let step = 0;
       let selectedSubject = 0;
+      let questionIndex = 0;
       let answer = null;
       let hintVisible = false;
+      let score = 0;
+      let totalAnswered = 0;
 
       const screen = document.querySelector("#screen");
       const backButton = document.querySelector("#backButton");
@@ -746,6 +770,11 @@
 
       function goTo(nextStep) {
         step = Math.max(0, Math.min(4, nextStep));
+        if (step === 3) {
+          questionIndex = 0;
+          answer = null;
+          hintVisible = false;
+        }
         render();
       }
 
@@ -753,11 +782,20 @@
         selectedSubject = index;
         answer = null;
         hintVisible = false;
+        questionIndex = 0;
+        score = 0;
+        totalAnswered = 0;
         render();
       }
 
       function chooseAnswer(option) {
+        if (answer !== null) return; // evita clicar de novo
         answer = option;
+        totalAnswered++;
+        const subject = subjects[selectedSubject];
+        if (option === subject.questions[questionIndex].correct) {
+          score++;
+        }
         render();
       }
 
@@ -766,19 +804,48 @@
         render();
       }
 
+      function nextQuestion() {
+        const subject = subjects[selectedSubject];
+        if (questionIndex < subject.questions.length - 1) {
+          questionIndex++;
+          answer = null;
+          hintVisible = false;
+          render();
+        } else {
+          goTo(4);
+        }
+      }
+
       function restart() {
         step = 0;
         answer = null;
         hintVisible = false;
+        questionIndex = 0;
+        score = 0;
+        totalAnswered = 0;
         render();
       }
 
       function render() {
         const subject = subjects[selectedSubject];
-        const isCorrect = answer === subject.correct;
+        const questions = subject.questions;
+        const currentQ = questions[questionIndex];
+        const isCorrect = answer === currentQ?.correct;
+
+        // Progresso geral (5 etapas principais)
+        let progressPercent = 20;
+        if (step === 0) progressPercent = 20;
+        if (step === 1) progressPercent = 40;
+        if (step === 2) progressPercent = 55;
+        if (step === 3) {
+          // Dentro do desafio: 55% → 90%
+          const qProgress = (questionIndex + (answer ? 1 : 0)) / questions.length;
+          progressPercent = 55 + qProgress * 35;
+        }
+        if (step === 4) progressPercent = 100;
 
         counter.textContent = `${step + 1}/5`;
-        progressBar.style.width = `${(step + 1) * 20}%`;
+        progressBar.style.width = `${progressPercent}%`;
         backButton.classList.toggle("hidden", step === 0);
 
         if (step === 0) {
@@ -787,9 +854,9 @@
               <div class="hero-visual"><div class="hero-icon">?</div></div>
               <span class="eyebrow">APRENDER SEM COMPLICAÇÃO</span>
               <h1>Entenda uma matéria de cada vez.</h1>
-              <p class="lead">Escolha, veja um exemplo e responda uma pergunta simples.</p>
+              <p class="lead">Escolha, veja um exemplo e responda desafios simples.</p>
               <button class="primary" onclick="goTo(1)">Começar agora →</button>
-              <p class="micro">Leva só 2 minutos • Sem cadastro</p>
+              <p class="micro">Leva só 3 minutos • Sem cadastro</p>
             </section>`;
         }
 
@@ -807,7 +874,7 @@
                       <span class="symbol" style="--subject-color:${item.color}">${item.symbol}</span>
                       <strong>${item.name}</strong>
                       <small>${item.detail}</small>
-                    </button>`,
+                    </button>`
                   )
                   .join("")}
               </div>
@@ -824,73 +891,103 @@
               <div class="example">
                 ${subject.example.map((item) => `<span>${item}</span>`).join("")}
               </div>
-              <div class="tip"><strong>Ideia principal:</strong> ${subject.explanation}</div>
-              <button class="primary" onclick="goTo(3)">Responder uma pergunta →</button>
+              <div class="tip"><strong>Ideia principal:</strong> ${subject.tip}</div>
+              <button class="primary" onclick="goTo(3)">Começar os desafios →</button>
             </section>`;
         }
 
         if (step === 3) {
+          const qNumber = questionIndex + 1;
+          const totalQ = questions.length;
+
           screen.innerHTML = `
             <section>
-              <div class="meta"><span>◎ DESAFIO RÁPIDO</span><span>1 de 1</span></div>
+              <div class="meta">
+                <span>◎ DESAFIO ${qNumber} de ${totalQ}</span>
+                <span>${subject.name}</span>
+              </div>
               <h1>Agora é com você.</h1>
-              <div class="question">${subject.question}</div>
+              <div class="question">${currentQ.q}</div>
               <div class="answers">
-                ${subject.options
+                ${currentQ.options
                   .map(
                     (option) => `
                     <button class="answer ${
-                      answer === option ? (option === subject.correct ? "correct" : "wrong") : ""
+                      answer === option
+                        ? option === currentQ.correct
+                          ? "correct"
+                          : "wrong"
+                        : ""
                     }" onclick="chooseAnswer('${option.replaceAll("'", "\\'")}')">
-                      ${option} ${answer === option ? (option === subject.correct ? "✓" : "×") : ""}
-                    </button>`,
+                      ${option} ${
+                      answer === option
+                        ? option === currentQ.correct
+                          ? "✓"
+                          : "×"
+                        : ""
+                    }
+                    </button>`
                   )
                   .join("")}
               </div>
               ${
                 answer
                   ? `<div class="feedback ${isCorrect ? "success" : "error"}">
-                      <strong>${isCorrect ? "Isso! Você entendeu." : "Quase! Veja a dica."}</strong>
-                      <span>${isCorrect ? `A resposta é ${subject.correct}.` : subject.hint}</span>
+                      <strong>${isCorrect ? "Isso! Você entendeu." : "Quase! Veja a explicação."}</strong>
+                      <span>${currentQ.explanation}</span>
                     </div>`
                   : `<button class="hint" onclick="showHint()">
-                      ${hintVisible ? subject.hint : "Ver uma dica"}
+                      ${hintVisible ? currentQ.hint : "Ver uma dica"}
                     </button>`
               }
-              <button class="primary" onclick="goTo(4)" ${answer === null ? "disabled" : ""}>
-                Ver resultado →
+              <button class="primary" onclick="nextQuestion()" ${answer === null ? "disabled" : ""}>
+                ${questionIndex < questions.length - 1 ? "Próxima pergunta →" : "Ver resultado →"}
               </button>
             </section>`;
         }
 
         if (step === 4) {
+          const percentage = Math.round((score / questions.length) * 100);
+          const message =
+            percentage === 100
+              ? "Você mandou muito bem!"
+              : percentage >= 66
+              ? "Você entendeu bem!"
+              : "Você começou bem!";
+
           screen.innerHTML = `
             <section class="result">
-              <div class="seal">✓</div>
-              <h1>${isCorrect ? "Você entendeu!" : "Você começou bem!"}</h1>
+              <div class="seal">${percentage === 100 ? "★" : "✓"}</div>
+              <h1>${message}</h1>
               <p class="lead">
-                ${
-                  isCorrect
-                    ? `Você aprendeu a ideia principal de ${subject.name}.`
-                    : `Reveja o exemplo de ${subject.name} e tente novamente depois.`
-                }
+                Você acertou <strong>${score} de ${questions.length}</strong> desafios de ${subject.name}.
               </p>
               <div class="stats">
-                <div><strong>1</strong><small>conceito visto</small></div>
-                <div><strong>${isCorrect ? "Acertou" : "Revisar"}</strong><small>seu resultado</small></div>
-                <div><strong>2 min</strong><small>tempo de estudo</small></div>
+                <div><strong>${questions.length}</strong><small>desafios</small></div>
+                <div><strong>${score}</strong><small>acertos</small></div>
+                <div><strong>${percentage}%</strong><small>aproveitamento</small></div>
               </div>
               <div class="plan">
                 <small>PRÓXIMO PASSO</small>
                 <strong>${subject.next}</strong>
-                <p>1 explicação + 2 perguntas rápidas</p>
+                <p>1 explicação + 3 novos desafios</p>
               </div>
               <button class="primary" onclick="restart()">Voltar ao início →</button>
             </section>`;
         }
       }
 
-      backButton.addEventListener("click", () => goTo(step - 1));
+      backButton.addEventListener("click", () => {
+        if (step === 3 && questionIndex > 0) {
+          questionIndex--;
+          answer = null;
+          hintVisible = false;
+          render();
+        } else {
+          goTo(step - 1);
+        }
+      });
+
       render();
     </script>
   </body>
