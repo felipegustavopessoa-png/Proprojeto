@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clareia — Aprenda sem complicação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --ink: #242821;
+        --muted: #6c7168;
+        --line: #dedfd9;
+        --paper: #ffffff;
+        --canvas: #f1f0ec;
+        --purple: #5b4ddc;
+        --lime: #d9f99d;
+        --mint: #b8f3e6;
+        --peach: #ffe0b2;
+      }
+
+      body {
+        min-height: 100vh;
+        color: var(--ink);
+        background: var(--canvas);
+        font-family: "DM Sans", sans-serif;
+      }
+
+      button {
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      button:focus-visible {
+        outline: 3px solid rgba(91, 77, 220, 0.3);
+        outline-offset: 2px;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: minmax(330px, 0.9fr) minmax(480px, 1.1fr);
+      }
+
+      .brand {
+        min-height: 100vh;
+        padding: 44px clamp(40px, 6vw, 88px);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        color: white;
+        background: var(--ink);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font:
+          800 24px "Manrope",
+          sans-serif;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        color: var(--ink);
+        background: var(--lime);
+      }
+
+      .brand-copy {
+        margin-top: clamp(80px, 12vh, 130px);
+      }
+
+      .tag {
+        color: var(--lime);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+      }
+
+      .brand h2 {
+        margin-top: 17px;
+        font:
+          800 clamp(38px, 4vw, 60px) / 1.05 "Manrope",
+          sans-serif;
+        letter-spacing: -2.5px;
+      }
+
+      .brand p {
+        margin-top: 20px;
+        color: #b8bdb4;
+      }
+
+      .art {
+        position: relative;
+        width: 300px;
+        height: 250px;
+        margin: 35px auto;
+      }
+
+      .art::before,
+      .art::after {
+        content: "";
+        position: absolute;
+        inset: 25px 5px;
+        border: 1px solid rgba(217, 249, 157, 0.3);
+        border-radius: 50%;
+        transform: rotate(-13deg);
+      }
+
+      .art::after {
+        inset: 5px 65px;
+        transform: rotate(55deg);
+      }
+
+      .bulb {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        width: 112px;
+        height: 112px;
+        display: grid;
+        place-items: center;
+        border-radius: 34px;
+        transform: translate(-50%, -50%) rotate(-5deg);
+        color: var(--ink);
+        background: var(--lime);
+        box-shadow: 13px 13px 0 var(--purple);
+        font-size: 48px;
+      }
+
+      .quote {
+        margin-top: auto;
+        padding-left: 18px;
+        border-left: 2px solid var(--lime);
+        color: #e5e7e1;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .quote small {
+        display: block;
+        margin-top: 6px;
+        color: #92978e;
+      }
+
+      .stage {
+        min-height: 100vh;
+        padding: 30px;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 12% 15%, rgba(184, 243, 230, 0.65) 0 8%, transparent 8.2%),
+          radial-gradient(circle at 88% 84%, rgba(255, 224, 178, 0.75) 0 10%, transparent 10.2%);
+      }
+
+      .app {
+        width: min(100%, 460px);
+        min-height: min(820px, calc(100vh - 60px));
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(36, 40, 33, 0.1);
+        border-radius: 32px;
+        background: var(--paper);
+        box-shadow: 0 28px 70px rgba(41, 44, 38, 0.15);
+      }
+
+      .topbar {
+        height: 70px;
+        padding: 0 25px;
+        display: grid;
+        grid-template-columns: 42px 1fr 42px;
+        align-items: center;
+      }
+
+      .back {
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #e7e8e3;
+        border-radius: 50%;
+        background: white;
+        font-size: 20px;
+      }
+
+      .back.hidden {
+        visibility: hidden;
+      }
+
+      .app-logo {
+        justify-self: center;
+        font:
+          800 18px "Manrope",
+          sans-serif;
+      }
+
+      .counter {
+        justify-self: end;
+        color: #858980;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .progress {
+        width: calc(100% - 50px);
+        height: 4px;
+        margin: 0 25px;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #ecece7;
+      }
+
+      .progress span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--purple);
+        transition: width 0.3s ease;
+      }
+
+      .screen {
+        flex: 1;
+        padding: 27px 34px 32px;
+        animation: enter 0.3s ease;
+      }
+
+      @keyframes enter {
+        from {
+          opacity: 0;
+          transform: translateY(7px);
+        }
+      }
+
+      .eyebrow {
+        display: block;
+        margin-bottom: 13px;
+        color: var(--purple);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.4px;
+      }
+
+      h1 {
+        font:
+          800 34px/1.1 "Manrope",
+          sans-serif;
+        letter-spacing: -1.5px;
+      }
+
+      .lead {
+        margin-top: 13px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .hero {
+        min-height: 680px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-visual {
+        height: 280px;
+        margin-bottom: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 26px;
+        background: #efeee8;
+      }
+
+      .hero-icon {
+        width: 122px;
+        height: 122px;
+        display: grid;
+        place-items: center;
+        border-radius: 42px;
+        transform: rotate(5deg);
+        color: var(--ink);
+        background: var(--lime);
+        box-shadow: 12px 12px 0 var(--purple);
+        font-size: 55px;
+      }
+
+      .primary {
+        width: 100%;
+        min-height: 56px;
+        margin-top: 26px;
+        border: 0;
+        border-radius: 16px;
+        color: white;
+        background: var(--ink);
+        box-shadow: 0 5px 0 #11130f;
+        font-weight: 700;
+        transition: 0.16s;
+      }
+
+      .primary:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 7px 0 #11130f;
+      }
+
+      .primary:disabled {
+        color: #a5a8a1;
+        background: #e5e6e1;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+
+      .hero .primary {
+        margin-top: auto;
+      }
+
+      .micro {
+        margin-top: 13px;
+        color: #92968e;
+        text-align: center;
+        font-size: 11px;
+      }
+
+      .subjects {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .subject {
+        min-height: 110px;
+        padding: 12px;
+        display: grid;
+        justify-items: start;
+        gap: 7px;
+        border: 1.5px solid #e4e5df;
+        border-radius: 16px;
+        text-align: left;
+        background: white;
+        transition: 0.18s;
+      }
+
+      .subject:hover {
+        transform: translateY(-2px);
+      }
+
+      .subject.selected {
+        border-color: var(--purple);
+        background: #f8f7ff;
+      }
+
+      .symbol {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: var(--subject-color);
+        font:
+          800 12px "Manrope",
+          sans-serif;
+      }
+
+      .subject strong {
+        font:
+          700 13px "Manrope",
+          sans-serif;
+      }
+
+      .subject small {
+        color: #858980;
+        font-size: 10px;
+      }
+
+      .meta {
+        margin-bottom: 22px;
+        display: flex;
+        justify-content: space-between;
+        color: #747970;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .example {
+        min-height: 145px;
+        margin-top: 25px;
+        padding: 24px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #f0efe9;
+      }
+
+      .example span {
+        min-width: 58px;
+        padding: 14px 11px;
+        border: 1.5px solid var(--ink);
+        border-radius: 12px;
+        text-align: center;
+        background: white;
+        box-shadow: 0 4px 0 var(--ink);
+        font:
+          800 14px "Manrope",
+          sans-serif;
+      }
+
+      .example span:nth-child(2) {
+        min-width: 35px;
+        border: 0;
+        color: var(--purple);
+        background: transparent;
+        box-shadow: none;
+        font-size: 20px;
+      }
+
+      .tip {
+        margin-top: 16px;
+        padding: 15px;
+        border: 1px solid #e5e5df;
+        border-radius: 15px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .tip strong {
+        color: var(--ink);
+      }
+
+      .question {
+        margin: 25px 0 21px;
+        padding: 20px;
+        border-radius: 18px;
+        background: #f0efe9;
+        font:
+          700 18px/1.45 "Manrope",
+          sans-serif;
+      }
+
+      .answers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .answer {
+        min-height: 56px;
+        padding: 8px;
+        border: 1.5px solid var(--line);
+        border-radius: 14px;
+        background: white;
+        font-weight: 700;
+      }
+
+      .answer.correct {
+        border-color: #4b966e;
+        color: #245a40;
+        background: #e4f5e9;
+      }
+
+      .answer.wrong {
+        border-color: #dc7777;
+        color: #963f3f;
+        background: #fff0ef;
+      }
+
+      .hint,
+      .feedback {
+        width: 100%;
+        margin-top: 15px;
+        padding: 13px 15px;
+        border-radius: 13px;
+        font-size: 12px;
+      }
+
+      .hint {
+        border: 1px dashed #b7b9b2;
+        background: white;
+      }
+
+      .feedback {
+        display: grid;
+        gap: 4px;
+        border: 0;
+        text-align: left;
+      }
+
+      .feedback.success {
+        color: #26543c;
+        background: #e4f5e9;
+      }
+
+      .feedback.error {
+        color: #87433f;
+        background: #fff0ef;
+      }
+
+      .result {
+        text-align: center;
+      }
+
+      .seal {
+        width: 82px;
+        height: 82px;
+        margin: 5px auto 28px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--ink);
+        border-radius: 26px;
+        transform: rotate(-4deg);
+        background: var(--lime);
+        box-shadow: 8px 8px 0 var(--purple);
+        font-size: 35px;
+      }
+
+      .stats {
+        margin-top: 25px;
+        padding: 18px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-block: 1px solid #e4e5df;
+      }
+
+      .stats div + div {
+        border-left: 1px solid #e4e5df;
+      }
+
+      .stats strong,
+      .stats small {
+        display: block;
+      }
+
+      .stats strong {
+        font:
+          800 16px "Manrope",
+          sans-serif;
+      }
+
+      .stats small {
+        margin-top: 5px;
+        color: #858980;
+        font-size: 9px;
+      }
+
+      .plan {
+        margin-top: 20px;
+        padding: 18px;
+        border: 1.5px solid var(--ink);
+        border-radius: 18px;
+        text-align: left;
+        background: #f2f9e5;
+        box-shadow: 5px 5px 0 var(--ink);
+      }
+
+      .plan small {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--purple);
+        font-weight: 800;
+      }
+
+      .plan p {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      @media (max-width: 880px) {
+        .page {
+          display: block;
+        }
+
+        .brand {
+          display: none;
+        }
+
+        .stage {
+          padding: 0;
+          background: white;
+        }
+
+        .app {
+          width: 100%;
+          min-height: 100vh;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+
+      @media (max-width: 390px) {
+        .screen {
+          padding-inline: 24px;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <aside class="brand">
+        <div class="logo"><span class="logo-mark">✦</span> clareia</div>
+        <div class="brand-copy">
+          <span class="tag">APRENDER PODE SER LEVE</span>
+          <h2>Menos decoreba.<br />Mais clareza.</h2>
+          <p>Um passo de cada vez, do seu jeito.</p>
+        </div>
+        <div class="art" aria-hidden="true"><div class="bulb">◉</div></div>
+        <div class="quote">
+          “Finalmente entendi sem precisar reler cinco vezes.”
+          <small>— Bia, 16 anos</small>
+        </div>
+      </aside>
+
+      <section class="stage">
+        <div class="app">
+          <header class="topbar">
+            <button class="back hidden" id="backButton" aria-label="Voltar">←</button>
+            <div class="app-logo">✦ clareia</div>
+            <div class="counter" id="counter">1/5</div>
+          </header>
+          <div class="progress"><span id="progressBar" style="width: 20%"></span></div>
+          <div class="screen" id="screen"></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const subjects = [
+        {
+          name: "Matemática",
+          detail: "Equações",
+          symbol: "x²",
+          color: "#d9f99d",
+          title: "Equação é uma balança.",
+          explanation: "O que você faz de um lado, precisa fazer do outro.",
+          example: ["x + 2", "=", "8"],
+          question: "Quanto vale x em x + 2 = 8?",
+          options: ["4", "5", "6", "10"],
+          correct: "6",
+          hint: "Tire 2 dos dois lados: 8 − 2.",
+          next: "Praticar equações com multiplicação",
+        },
+        {
+          name: "Português",
+          detail: "Verbos",
+          symbol: "Aa",
+          color: "#c8c1ff",
+          title: "Verbo mostra uma ação.",
+          explanation: "Na frase, procure a palavra que diz o que alguém faz.",
+          example: ["Ana", "corre", "cedo"],
+          question: "Qual é o verbo em “Ana corre cedo”?",
+          options: ["Ana", "corre", "cedo", "frase"],
+          correct: "corre",
+          hint: "Qual palavra mostra a ação de Ana?",
+          next: "Reconhecer verbos em novas frases",
+        },
+        {
+          name: "Biologia",
+          detail: "Células",
+          symbol: "DNA",
+          color: "#b8f3e6",
+          title: "O núcleo comanda a célula.",
+          explanation: "Ele guarda o DNA e orienta as atividades da célula.",
+          example: ["Núcleo", "→", "comando"],
+          question: "Qual parte comanda a célula?",
+          options: ["Núcleo", "Membrana", "Sangue", "Osso"],
+          correct: "Núcleo",
+          hint: "É a parte que também guarda o DNA.",
+          next: "Conhecer as outras partes da célula",
+        },
+        {
+          name: "História",
+          detail: "Revoluções",
+          symbol: "1789",
+          color: "#ffe0b2",
+          title: "A Revolução mudou a França.",
+          explanation: "Em 1789, a população reagiu à desigualdade e ao poder do rei.",
+          example: ["1789", "→", "Revolução"],
+          question: "Em que ano começou a Revolução Francesa?",
+          options: ["1500", "1789", "1822", "1889"],
+          correct: "1789",
+          hint: "O ano aparece no exemplo acima.",
+          next: "Entender as causas da Revolução",
+        },
+        {
+          name: "Física",
+          detail: "Velocidade",
+          symbol: "m/s",
+          color: "#ffd4c8",
+          title: "Velocidade liga espaço e tempo.",
+          explanation: "Divida a distância percorrida pelo tempo gasto.",
+          example: ["distância", "÷", "tempo"],
+          question: "Qual cálculo encontra a velocidade?",
+          options: ["somar", "multiplicar", "dividir", "subtrair"],
+          correct: "dividir",
+          hint: "Use distância ÷ tempo.",
+          next: "Calcular uma velocidade simples",
+        },
+        {
+          name: "Geografia",
+          detail: "Clima",
+          symbol: "°C",
+          color: "#bde1ff",
+          title: "Clima não é tempo.",
+          explanation: "Tempo é o estado de hoje. Clima é o padrão de muitos anos.",
+          example: ["hoje", "≠", "muitos anos"],
+          question: "O que descreve um padrão de muitos anos?",
+          options: ["Clima", "Tempo", "Hora", "Estação"],
+          correct: "Clima",
+          hint: "Não é apenas o que acontece hoje.",
+          next: "Comparar tipos de clima",
+        },
+      ];
+
+      let step = 0;
+      let selectedSubject = 0;
+      let answer = null;
+      let hintVisible = false;
+
+      const screen = document.querySelector("#screen");
+      const backButton = document.querySelector("#backButton");
+      const counter = document.querySelector("#counter");
+      const progressBar = document.querySelector("#progressBar");
+
+      function goTo(nextStep) {
+        step = Math.max(0, Math.min(4, nextStep));
+        render();
+      }
+
+      function chooseSubject(index) {
+        selectedSubject = index;
+        answer = null;
+        hintVisible = false;
+        render();
+      }
+
+      function chooseAnswer(option) {
+        answer = option;
+        render();
+      }
+
+      function showHint() {
+        hintVisible = true;
+        render();
+      }
+
+      function restart() {
+        step = 0;
+        answer = null;
+        hintVisible = false;
+        render();
+      }
+
+      function render() {
+        const subject = subjects[selectedSubject];
+        const isCorrect = answer === subject.correct;
+
+        counter.textContent = `${step + 1}/5`;
+        progressBar.style.width = `${(step + 1) * 20}%`;
+        backButton.classList.toggle("hidden", step === 0);
+
+        if (step === 0) {
+          screen.innerHTML = `
+            <section class="hero">
+              <div class="hero-visual"><div class="hero-icon">?</div></div>
+              <span class="eyebrow">APRENDER SEM COMPLICAÇÃO</span>
+              <h1>Entenda uma matéria de cada vez.</h1>
+              <p class="lead">Escolha, veja um exemplo e responda uma pergunta simples.</p>
+              <button class="primary" onclick="goTo(1)">Começar agora →</button>
+              <p class="micro">Leva só 2 minutos • Sem cadastro</p>
+            </section>`;
+        }
+
+        if (step === 1) {
+          screen.innerHTML = `
+            <section>
+              <span class="eyebrow">ESCOLHA UMA OPÇÃO</span>
+              <h1>Qual matéria você quer entender?</h1>
+              <div class="subjects">
+                ${subjects
+                  .map(
+                    (item, index) => `
+                    <button class="subject ${selectedSubject === index ? "selected" : ""}"
+                      onclick="chooseSubject(${index})">
+                      <span class="symbol" style="--subject-color:${item.color}">${item.symbol}</span>
+                      <strong>${item.name}</strong>
+                      <small>${item.detail}</small>
+                    </button>`,
+                  )
+                  .join("")}
+              </div>
+              <button class="primary" onclick="goTo(2)">Ver explicação →</button>
+            </section>`;
+        }
+
+        if (step === 2) {
+          screen.innerHTML = `
+            <section>
+              <div class="meta"><span>▣ ${subject.name}</span><span>◷ 1 min</span></div>
+              <h1>${subject.title}</h1>
+              <p class="lead">${subject.explanation}</p>
+              <div class="example">
+                ${subject.example.map((item) => `<span>${item}</span>`).join("")}
+              </div>
+              <div class="tip"><strong>Ideia principal:</strong> ${subject.explanation}</div>
+              <button class="primary" onclick="goTo(3)">Responder uma pergunta →</button>
+            </section>`;
+        }
+
+        if (step === 3) {
+          screen.innerHTML = `
+            <section>
+              <div class="meta"><span>◎ DESAFIO RÁPIDO</span><span>1 de 1</span></div>
+              <h1>Agora é com você.</h1>
+              <div class="question">${subject.question}</div>
+              <div class="answers">
+                ${subject.options
+                  .map(
+                    (option) => `
+                    <button class="answer ${
+                      answer === option ? (option === subject.correct ? "correct" : "wrong") : ""
+                    }" onclick="chooseAnswer('${option.replaceAll("'", "\\'")}')">
+                      ${option} ${answer === option ? (option === subject.correct ? "✓" : "×") : ""}
+                    </button>`,
+                  )
+                  .join("")}
+              </div>
+              ${
+                answer
+                  ? `<div class="feedback ${isCorrect ? "success" : "error"}">
+                      <strong>${isCorrect ? "Isso! Você entendeu." : "Quase! Veja a dica."}</strong>
+                      <span>${isCorrect ? `A resposta é ${subject.correct}.` : subject.hint}</span>
+                    </div>`
+                  : `<button class="hint" onclick="showHint()">
+                      ${hintVisible ? subject.hint : "Ver uma dica"}
+                    </button>`
+              }
+              <button class="primary" onclick="goTo(4)" ${answer === null ? "disabled" : ""}>
+                Ver resultado →
+              </button>
+            </section>`;
+        }
+
+        if (step === 4) {
+          screen.innerHTML = `
+            <section class="result">
+              <div class="seal">✓</div>
+              <h1>${isCorrect ? "Você entendeu!" : "Você começou bem!"}</h1>
+              <p class="lead">
+                ${
+                  isCorrect
+                    ? `Você aprendeu a ideia principal de ${subject.name}.`
+                    : `Reveja o exemplo de ${subject.name} e tente novamente depois.`
+                }
+              </p>
+              <div class="stats">
+                <div><strong>1</strong><small>conceito visto</small></div>
+                <div><strong>${isCorrect ? "Acertou" : "Revisar"}</strong><small>seu resultado</small></div>
+                <div><strong>2 min</strong><small>tempo de estudo</small></div>
+              </div>
+              <div class="plan">
+                <small>PRÓXIMO PASSO</small>
+                <strong>${subject.next}</strong>
+                <p>1 explicação + 2 perguntas rápidas</p>
+              </div>
+              <button class="primary" onclick="restart()">Voltar ao início →</button>
+            </section>`;
+        }
+      }
+
+      backButton.addEventListener("click", () => goTo(step - 1));
+      render();
+    </script>
+  </body>
+</html>
